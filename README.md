@@ -1,9 +1,8 @@
-# dumbOS
-It's an emulator of the dumb 8-64x01 processor. (The second version)
+# hell-1664
+It's an emulator of the hell-1664 processor.
 
-`8` 8 registers, everyone contains number from 0 to 255.
+`16` Is 16 bit
 `64` 64 KB of RAM.
-`x01` Version in hexadecimal. The second.
 
 # How to use:
 Enter the write bootloader file from the main folder.
@@ -11,16 +10,16 @@ In the code you'll see the program's array:
 ```c
 uint8_t program[] = {}
 ```
-There you can write your own code in hexadecimal for the dumb 8-64x01 CPU.
+There you can write your own code in hexadecimal for the hell-1664 CPU.
 For example:
 ```
-0x02, 0x00, 0x04,//D
+0x02, 0x00, 0x08,//H
 0x0B, 0x00, 0x00, 0x00,
-0x02, 0x00, 0x15,//U
+0x02, 0x00, 0x05,//E
 0x0B, 0x00, 0x01, 0x00,
-0x02, 0x00, 0x0D,//M
+0x02, 0x00, 0x0C,//L
 0x0B, 0x00, 0x02, 0x00,
-0x02, 0x00, 0x02,//B
+0x02, 0x00, 0x0C,//L
 0x0B, 0x00, 0x03, 0x00,
 0x02, 0x00, 0x0F,//O
 0x0B, 0x00, 0x05, 0x00,
@@ -45,7 +44,7 @@ move num to ram        = 0x0A, addr1, addr2, num
 move reg to vram       = 0x0B, addr1, addr2, reg_addr
 move to reg from vram  = 0x0C, reg_addr, addr1, addr2
 ```
-(Note: In dumb 8-64x01 the instruction set is very short, so you can't load anything into RAM. Working with registers and graphics memory is all you can do.)
+(Note: In hell-1664 the instruction set is very short, so you can't load anything into RAM. Working with registers and graphics memory is all you can do.)
 
 When the code is written, you can compile everything to `build` file on Linux:
 
@@ -66,7 +65,7 @@ Then you'll see two new files named `disk.bin` and `build`.
 ./build
 ```
 Then you'll see your program work on pretty 640x480 GUI.
-<img width="1862" height="1005" alt="изображение" src="https://github.com/user-attachments/assets/f718d3da-5159-41ea-bf33-41ee6970b1ef" />
+<img width="640" height="508" alt="image" src="https://github.com/user-attachments/assets/2ef2bd83-91d0-4daf-831a-2bb772d8826e" />
 
 # Errors
 
